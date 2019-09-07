@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Algoritmos Clássicos</string>
+    <string name="rbTxtFibonacci">Cálculo Fibonacci</string>
+    <string name="rbTxtPrimos">Cálculo Números Primos</string>
+    <string name="rbTxtAmbos">Ambos os Cálculos</string>
+    <string name="txtNumInicial">Insira o Número Inicial</string>
+    <string name="btnTxtCalcular">Calcular</string>
+</resources>

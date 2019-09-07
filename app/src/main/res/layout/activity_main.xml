@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/txtNumInicial"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:ems="10"
+            android:hint="@string/txtNumInicial"
+            android:inputType="number" />
+
+        <SeekBar
+            android:id="@+id/skQuantidade"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:indeterminate="false"
+            android:labelFor="@id/txtNumInicial"
+            android:max="10"
+            android:paddingTop="25dip"
+            android:progress="0" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <RadioButton
+                android:id="@+id/rdFibonacci"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rbTxtFibonacci" />
+
+            <RadioButton
+                android:id="@+id/rbNumPrimos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rbTxtPrimos" />
+
+            <RadioButton
+                android:id="@+id/rbAmbos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rbTxtAmbos" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="180dp"
+                android:layout_height="60dp"
+                android:layout_weight="@android:dimen/dialog_min_width_major"
+                android:text="@string/btnTxtCalcular" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
