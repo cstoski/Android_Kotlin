@@ -5,4 +5,5 @@
     <string name="rbTxtAmbos">Ambos os Cálculos</string>
     <string name="txtNumInicial">Insira o Número Inicial</string>
     <string name="btnTxtCalcular">Calcular</string>
+    <string name="txtResultQuantity">Qual a quantidade de Resultado deseja Exibir?</string>
 </resources>

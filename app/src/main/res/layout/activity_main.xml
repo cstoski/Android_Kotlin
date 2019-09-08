@@ -20,38 +20,71 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/txtNumInicial"
+            android:id="@+id/txtInitialNumber"
             android:layout_width="match_parent"
-            android:layout_height="64dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:editable="false"
             android:ems="10"
             android:hint="@string/txtNumInicial"
-            android:inputType="number" />
+            android:inputType="number"
+            android:maxLength="5"
+            android:numeric="integer"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/txtViewQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/txtResultQuantity"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/txtValueProgress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/colorSecundary"
+            android:textSize="18sp"
+            android:textStyle="bold|italic" />
 
         <SeekBar
-            android:id="@+id/skQuantidade"
+            android:id="@+id/skbResultQuantity"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:indeterminate="false"
-            android:labelFor="@id/txtNumInicial"
-            android:max="10"
-            android:paddingTop="25dip"
-            android:progress="0" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="16dp"
+            android:max="20"
+            android:progress="1" />
 
         <RadioGroup
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="8dp">
 
             <RadioButton
-                android:id="@+id/rdFibonacci"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/rbTxtFibonacci" />
-
-            <RadioButton
-                android:id="@+id/rbNumPrimos"
+                android:id="@+id/rbPrimos"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/rbTxtPrimos" />
+
+            <RadioButton
+                android:id="@+id/rbFibonacci"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rbTxtFibonacci" />
 
             <RadioButton
                 android:id="@+id/rbAmbos"
@@ -59,14 +92,20 @@
                 android:layout_height="wrap_content"
                 android:text="@string/rbTxtAmbos" />
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="180dp"
-                android:layout_height="60dp"
-                android:layout_weight="@android:dimen/dialog_min_width_major"
-                android:text="@string/btnTxtCalcular" />
-
         </RadioGroup>
+
+        <Button
+            android:id="@+id/btnCalcular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@color/colorAccent"
+            android:text="@string/btnTxtCalcular"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
