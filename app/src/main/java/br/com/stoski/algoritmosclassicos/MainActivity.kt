@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean){
                 txtValueProgress.text = progress.toString()
                 quantityResults = progress
+
             }
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
             }
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         //Clique do Botao Calcular
-        btnCalcular.setOnClickListener{
+        btnCalculate.setOnClickListener{
 
             initialNumber = txtInitialNumber.text.toString().toInt()
             var provider : String = ""
@@ -48,18 +49,18 @@ class MainActivity : AppCompatActivity() {
                 val toast = Toast.makeText(getApplicationContext(), "Insira uma Quantidade Maior que 0!", Toast.LENGTH_LONG)
                 toast.setGravity(Gravity.CENTER_HORIZONTAL or Gravity.CENTER_VERTICAL, 0, 0)
                 toast.show()
-            } else if ( (!rbPrimos.isChecked) && (!rbFibonacci.isChecked) && (!rbAmbos.isChecked)){
+            } else if ( (!rbPrime.isChecked) && (!rbFibonacci.isChecked) && (!rbBoth.isChecked)){
                 val toast = Toast.makeText(getApplicationContext(), "Selecione Pelo menos uma opção de Cálculo!", Toast.LENGTH_LONG)
                 toast.setGravity(Gravity.CENTER_HORIZONTAL or Gravity.CENTER_VERTICAL, 0, 0)
                 toast.show()
             }else{
-                if (rbPrimos.isChecked || rbAmbos.isChecked){
+                if (rbPrime.isChecked || rbBoth.isChecked){
                     //Calculo dos Números Primos
                     var listPrimes = calculatePrimes(initialNumber,quantityResults)
                     provider = "\n Números Primos: " + listPrimes.toString()
                 }
 
-                if(rbFibonacci.isChecked || rbAmbos.isChecked){
+                if(rbFibonacci.isChecked || rbBoth.isChecked){
                     //Calculos da Sequencia de Fibonacci
                     var listFibonacci = calculateFibonacci(initialNumber,quantityResults)
                     provider = provider + "\n\n Sequência Fibonacci : " + listFibonacci.toString()
