@@ -7,6 +7,7 @@ import android.view.Gravity
 import android.widget.SeekBar
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import java.lang.Exception
 import kotlin.collections.ArrayList
 
 
@@ -37,11 +38,12 @@ class MainActivity : AppCompatActivity() {
         //Clique do Botao Calcular
         btnCalculate.setOnClickListener{
 
+
+
+        try{
             initialNumber = txtInitialNumber.text.toString().toInt()
             var provider : String = ""
-
-
-            if (initialNumber<=0 ||initialNumber==null){
+            if (initialNumber==0 ||initialNumber==null){
                 val toast = Toast.makeText(getApplicationContext(), "Insira um número Inicial Maior que 0!", Toast.LENGTH_LONG)
                 toast.setGravity(Gravity.CENTER_HORIZONTAL or Gravity.CENTER_VERTICAL, 0, 0)
                 toast.show()
@@ -71,6 +73,11 @@ class MainActivity : AppCompatActivity() {
                 intent.putExtra("provider_key", provider)
                 startActivity(intent)
             }
+        }catch (e : Exception){
+            val toast = Toast.makeText(getApplicationContext(), "Preencha todos os campos", Toast.LENGTH_LONG)
+            toast.setGravity(Gravity.CENTER_HORIZONTAL or Gravity.CENTER_VERTICAL, 0, 0)
+            toast.show()
+        }
         }
     }
 }
